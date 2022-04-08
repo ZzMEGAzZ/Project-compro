@@ -10,5 +10,12 @@ Project Members:
 4.Ms.Yosita ID:6410505817
 '''
 
-def register():
-  
+import Kristikorn as reg
+
+reg.register()
+
+
+
+
+
+
