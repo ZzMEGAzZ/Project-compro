@@ -12,7 +12,12 @@ Project Members:
 
 import Kristikorn as reg
 
-reg.register()
+mode = input("Do you want to register or login ? (R/L): ").upper()
+if mode == "R":
+    username = reg.register()
+    print("Your username is: ",username)
+else:
+    reg.login()
 
 
 
