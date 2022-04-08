@@ -11,6 +11,9 @@ Project Members:
 '''
 
 import Kristikorn as reg
+import Saharat as vac
+import Suwichan as sym
+import Yosita as stat
 
 def main():
     while True:
@@ -26,16 +29,16 @@ def main():
                         choice = int(input("Enter your choice: "))
                         if choice == 1:
                             print("Vaccination")
-                            return True
+                            vac.vaccination()
                         elif choice == 2:
                             print("Symptoms")
-                            return True
+                            sym.symptoms()
                         elif choice == 3:
                             print("Statistics")
-                            return True
+                            stat.statistics()
                         elif choice == 4:
                             print("Exit")
-                            exit
+                            return False
                         else:
                             print("Please enter a valid choice")
                     except ValueError:
