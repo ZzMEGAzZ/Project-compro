@@ -1,7 +1,5 @@
 '''This function is written by Mr.Kristikorn ID:6410505442'''
 
-import re
-
 
 def register():
     print("||||| Adding New User |||||")
@@ -10,12 +8,12 @@ def register():
     username = first+' '+last
     age = input("Enter your age: ")
     password = input("Password: ")
-    vac = input("Have you vaccinated ? (Yes or No): ").lower()
-    while vac != "yes" and vac != "no":
-        vac = input("Have you vaccinated ? (Yes or No): ").lower()
-    vac_booster = input("Have you got a booster ? (Yes or No): ")
-    while vac_booster != "yes" and vac_booster != "no":
-        vac_booster = input("Have you got a booster ? (Yes or No): ")
+    vac = input("Have you vaccinated ? (Y/N): ").upper()
+    while vac != "Y" and vac != "N":
+        vac = input("Have you vaccinated ? (Y/N): ").upper()
+    vac_booster = input("Have you got a booster ? (Y/N): ").upper()
+    while vac_booster != "Y" and vac_booster != "N":
+        vac_booster = input("Have you got a booster ? (Y/N): ").upper()
     line = username+','+password+','+age+','+vac+','+vac_booster
     lines = open('register.txt').read().splitlines()
     lines.append(line)
@@ -26,6 +24,7 @@ def register():
     return username
 
 def login():
+    global status
     fails = 0
 
     print("||||| --- Login --- |||||")
@@ -35,7 +34,7 @@ def login():
     for line in lines:
         if line.split(',')[0] == username and line.split(',')[1] == password:
             print("Welcome",username)
-            return username
+            return True
     while line.split(',')[0] != username and line.split(',')[1] != password:
         fails += 1
         print(f"Wrong username or password Please try again. You have {3-(fails-1)} tries left.")
@@ -44,7 +43,15 @@ def login():
         for line in lines:
             if line.split(',')[0] == username and line.split(',')[1] == password:
                 print("Welcome",username)
-                return username
+                return True
             if fails == 3:
-                print("Please try again later")
                 return False
+    return True
+    
+def show_menu():
+    print("||||| --- Menu --- |||||")
+    print("1. Vaccination")
+    print("2. Symptoms")
+    print("3. Statistics")
+    print("4. Exit")
+

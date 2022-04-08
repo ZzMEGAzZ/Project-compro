@@ -12,15 +12,37 @@ Project Members:
 
 import Kristikorn as reg
 
-mode = input("Do you want to register or login ? (R/L): ").upper()
-if mode == "R":
-    username = reg.register()
-    print("Your username is: ",username)
-else:
-    reg.login()
+def main():
+    while True:
+        login = input("Do you want to register or login ? (R/L): ").upper()
+        if login == "R":
+            username = reg.register()
+            print("Your username is: ", username)
+        else:
+            if reg.login() == True:
+                reg.show_menu()
+                while True:
+                    try:
+                        choice = int(input("Enter your choice: "))
+                        if choice == 1:
+                            print("Vaccination")
+                            return True
+                        elif choice == 2:
+                            print("Symptoms")
+                            return True
+                        elif choice == 3:
+                            print("Statistics")
+                            return True
+                        elif choice == 4:
+                            print("Exit")
+                            exit
+                        else:
+                            print("Please enter a valid choice")
+                    except ValueError:
+                        print("Please enter a valid choice")
+            else:
+                print("Please try again later")
+                return False
 
 
-
-
-
-
+main()
