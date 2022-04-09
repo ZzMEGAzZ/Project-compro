@@ -3,19 +3,20 @@
 def vaccination():
     lines = open('register.txt').read().splitlines()
     for line in lines:
-        if line.split(',')[5] == "Y" and line.split(',')[6] == "Y":
+        if line.split(',')[7] == "Y" and line.split(',')[8] == "Y":
             print(f"You are fully vaccinated.")
             return True
-        elif line.split(',')[5] == "N" and line.split(',')[6] == "N":
-          if line.split(',')[2] < 18:
+        elif line.split(',')[7] == "N" and line.split(',')[8] == "N":
+          if line.split(',')[4] < 18:
             "We advice Pfizer for your first dose as it's the only vaccine authorized for younger age groups."
           else:
             "We advice Moderna for your first dose."
-        elif line.split(',')[5] == "Y" and line.split(',')[6] == "N":
+        elif line.split(',')[7] == "Y" and line.split(',')[8] == "N":
           first = input("Which vaccine is your first dose?: ")
-          vaccine_menu(1)
+          vaccine_menu1()
           second = input("Which vaccine is your second dose?: ")
-          vaccine_menu(2)
+          vaccine_menu2()
+        
           
         
 def vaccine_menu1():
