@@ -106,7 +106,8 @@ def covid_checked(fever, dry_cough, tiredness, Runny_nose, body_ache, sore_throa
       print("wash your hands with soap and water or use hand sanitiser regularly throughout the day")
     elif count>0 and count <7 :
       print("You may be risk of getting COVID-19")
-      print("print("***Advice for people maybe risk from coronavirus***")")
+      print("***Advice for people maybe risk from coronavirus***")")
+      print("")
     else:
         print("You are safe")
 
