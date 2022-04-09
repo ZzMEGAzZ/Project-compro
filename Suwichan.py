@@ -2,7 +2,7 @@
 
 from time import sleep
 
-def symptoms():
+def symptoms_analysis():
     count = 0
     print("--- Screening  questions for COVID-19 ---")
     past_14d = input("Have you had a fever in the past 14 days ? (Y/N): ").upper()
@@ -13,7 +13,7 @@ def symptoms():
       if past_14d == "Y":
         count+=1
     spreading =input("You travelled from or lived in any country that has continuous spreading of COVID-19 ? (Y/N): ").upper()
-    if job == "Y":
+    if spreading == "Y":
         count+=2
     while spreading != "Y" and spreading != "N":
         spreading =input("You travelled from or lived in any country that has continuous spreading of COVID-19 ? (Y/N): ").upper()
@@ -27,11 +27,11 @@ def symptoms():
         if job == "Y":
           count+=2
     positive_covid = input("Have you been in contact with someone who has COVID-19 ? (Y/N): ").upper()
-    if spreading == "Y":
+    if positive_covid == "Y":
         count+=1
     while positive_covid != "Y" and positive_covid != "N":
         positive_covid = input("Have you been in contact with someone who has COVID-19 ? (Y/N): ").upper()
-        if spreading == "Y":
+        if positive_covid == "Y":
           count+=1
     print("Do you have any of these symptoms?")
     sleep(1)
@@ -91,11 +91,9 @@ def symptoms():
         breathing = input(" Difficult or short breathing or currently having pneumonia (Y/N): ").upper()
         if breathing == "Y":
           count+=1
-    return fever, dry_cough, tiredness, Runny_nose, body_ache, sore_throat, smell, breathing, positive_covid, past_14d, spreading, job
+    return count
 
-def covid_checked(fever, dry_cough, tiredness, Runny_nose, body_ache, sore_throat, smell, breathing, positive_covid, past_14d, spreading, job):
-    '''if fever == "Y" or dry_cough == "Y" or tiredness == "Y" or Runny_nose == "Y" or body_ache == "Y" or sore_throat == "Y" or smell == "Y" or breathing == "Y":
-        print("You have COVID-19")'''
+def covid_checked(count):
     if count >= 7 :
       print("You are at high risk of getting seriously ill from COVID-19.")
       print("***Advice for people at high risk from coronavirus***")
@@ -106,9 +104,11 @@ def covid_checked(fever, dry_cough, tiredness, Runny_nose, body_ache, sore_throa
       print("wash your hands with soap and water or use hand sanitiser regularly throughout the day")
     elif count>0 and count <7 :
       print("You may be risk of getting COVID-19")
-      print("***Advice for people maybe risk from coronavirus***")")
-      print("")
+      print("***Advice for people maybe risk from coronavirus***")
+      print("-The standard recommendation is to self-quarantine for 14 days")
+      print("-Follow your community guidelines for staying home.")
+      print("Don’t leave your house if you don’t feel well.")
     else:
-        print("You are safe")
+        print("Great! You are safe.")
 
 

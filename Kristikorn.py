@@ -13,6 +13,8 @@ def register():
             return False
     age = input("Enter your age: ")
     password = input("Password: ")
+    email = input("Email: ")
+    phone = input("Phone: ")
     vac = input("Have you vaccinated ? (Y/N): ").upper()
     while vac != "Y" and vac != "N":
         vac = input("Have you vaccinated ? (Y/N): ").upper()
@@ -22,7 +24,7 @@ def register():
         vac_booster = input("Have you got a booster ? (Y/N): ").upper()
         while vac_booster != "Y" and vac_booster != "N":
             vac_booster = input("Have you got a booster ? (Y/N): ").upper()
-    line = username+','+password+','+age+','+vac+','+vac_booster
+    line = username+','+password+','+age+','+email+','+phone+','vac+','+vac_booster
     lines = open('register.txt').read().splitlines()
     lines.append(line)
     lines = map(lambda x:x+'\n',lines)

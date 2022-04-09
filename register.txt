@@ -1,3 +1,0 @@
-Admin ,Admin,20,Y,Y
-test ,test,20,Y,Y
-Kristikorn Setthakraikul,1234,19,Y,Y
