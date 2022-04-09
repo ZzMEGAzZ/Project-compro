@@ -52,7 +52,7 @@ def statistics_total_health_area():
         elif area[i] == 13:
             area_13 += eval(str(data.total[i]))
 
-    health_area = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+    health_area = ["area_1", "area_2", "area_3", "area_4", "area_5", "area_6", "area_7", "area_8", "area_9", "area_10", "area_11", "area_12", "area_13"]
     total = [area_1, area_2, area_3, area_4, area_5, area_6, area_7, area_8, area_9, area_10, area_11, area_12, area_13]
 
     plt.bar(health_area,total)
