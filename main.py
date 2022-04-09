@@ -15,6 +15,7 @@ import Saharat as vac
 import Suwichan as sym
 import Yosita as stat
 
+
 def main():
     while True:
         login = input("Do you want to register or login ? (R/L): ").upper()
@@ -25,27 +26,34 @@ def main():
             if reg.login() == True:
                 reg.show_menu()
                 while True:
-                    try:
-                        choice = int(input("Enter your choice: "))
-                        if choice == 1:
-                            print("Vaccination")
-                            vac.vaccination()
-                        elif choice == 2:
-                            print("Symptoms")
-                            sym.symptoms()
-                        elif choice == 3:
-                            print("Statistics")
-                            stat.statistics()
-                        elif choice == 4:
-                            print("Exit")
-                            return False
-                        else:
-                            print("Please enter a valid choice")
-                    except ValueError:
-                        print("Please enter a valid choice")
+                    if select_menu() == False:
+                        break
+                break
             else:
                 print("Please try again later")
                 return False
+
+
+def select_menu():
+    try:
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            print("Vaccination")
+            vac.vaccination()
+        elif choice == 2:
+            print("Symptoms")
+            sym.symptoms()
+        elif choice == 3:
+            print("Statistics")
+            stat.statistics()
+        elif choice == 4:
+            print("Exit")
+            return False
+        else:
+            print("Please enter a valid choice")
+    except ValueError:
+        print("Please enter a valid choice")
+        
 
 
 main()
