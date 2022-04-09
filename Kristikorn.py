@@ -48,10 +48,3 @@ def login():
                 return False
     return True
     
-def show_menu():
-    print("||||| --- Menu --- |||||")
-    print("1. Vaccination")
-    print("2. Symptoms")
-    print("3. Statistics")
-    print("4. Exit")
-
