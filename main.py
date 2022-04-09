@@ -24,7 +24,7 @@ def main():
             print("Your username is: ", username)
         else:
             if reg.login() == True:
-                reg.show_menu()
+                show_menu()
                 while True:
                     if select_menu() == False:
                         break
@@ -33,6 +33,11 @@ def main():
                 print("Please try again later")
                 return False
 
+def show_menu():
+    print("1. Vaccination")
+    print("2. Symptoms")
+    print("3. Statistics")
+    print("4. Exit")
 
 def select_menu():
     try:
