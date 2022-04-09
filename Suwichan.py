@@ -109,6 +109,5 @@ def covid_checked(count):
       print("-Follow your community guidelines for staying home.")
       print("Don’t leave your house if you don’t feel well.")
     else:
-        print("Great! You are safe.")
-
+        print(' \"Great! You are safe.\" ')
 

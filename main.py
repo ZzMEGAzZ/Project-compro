@@ -43,9 +43,10 @@ def main():
                     return False
 
 def show_menu():
+    print("\n")
     print("----- Menu -----")
     print("1. Vaccination")
-    print("2. Symptoms")
+    print("2. Symptoms Check")
     print("3. Statistics")
     print("4. Exit")
     print("----------------")
@@ -58,10 +59,12 @@ def select_menu():
             vac.vaccination()
         elif choice == 2:
             print("Symptoms")
-            sym.symptoms()
+            count = sym.symptoms_analysis()
+            print("\n")
+            sym.covid_checked(count)
         elif choice == 3:
             print("Statistics")
-            stat.statistics()
+            stat.statistics_total_health_area()
         elif choice == 4:
             print("Exit")
             return False

@@ -1,18 +1,17 @@
 '''This function is written by Mr.Kristikorn ID:6410505442'''
 
-
 def register():
     print("||||| --- Adding New User --- |||||")
     first = input("First Name: ")
     last = input("Last name: ")
-    username = first+' '+last
+    username = input("Username: ")
     lines = open('register.txt').read().splitlines()
     for line in lines:
         if line.split(',')[0] == username:
             print("Username already exists")
             return False
     age = input("Enter your age: ")
-    password = input("Password: ")
+    password = input('Password: ')
     email = input("Email: ")
     phone = input("Phone: ")
     vac = input("Have you vaccinated ? (Y/N): ").upper()
@@ -24,7 +23,7 @@ def register():
         vac_booster = input("Have you got a booster ? (Y/N): ").upper()
         while vac_booster != "Y" and vac_booster != "N":
             vac_booster = input("Have you got a booster ? (Y/N): ").upper()
-    line = username+','+password+','+age+','+email+','+phone+','vac+','+vac_booster
+    line = username+','+password+','+age+','+email+','+phone+','+vac+','+vac_booster
     lines = open('register.txt').read().splitlines()
     lines.append(line)
     lines = map(lambda x:x+'\n',lines)
@@ -52,10 +51,12 @@ def login():
         password = input("Password: ")
         for line in lines:
             if line.split(',')[0] == username and line.split(',')[1] == password:
-                print("Welcome",username)
+                print("Welcome",first+' '+last)
                 return True
               
             if fails == 3:
                 return False
     return True
 
+def change_user_data():
+  pass
