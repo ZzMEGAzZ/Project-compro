@@ -2,18 +2,26 @@
 
 
 def register():
-    print("||||| Adding New User |||||")
+    print("||||| --- Adding New User --- |||||")
     first = input("First Name: ")
     last = input("Last name: ")
     username = first+' '+last
+    lines = open('register.txt').read().splitlines()
+    for line in lines:
+        if line.split(',')[0] == username:
+            print("Username already exists")
+            return False
     age = input("Enter your age: ")
     password = input("Password: ")
     vac = input("Have you vaccinated ? (Y/N): ").upper()
     while vac != "Y" and vac != "N":
         vac = input("Have you vaccinated ? (Y/N): ").upper()
-    vac_booster = input("Have you got a booster ? (Y/N): ").upper()
-    while vac_booster != "Y" and vac_booster != "N":
+    if vac == "N":
+        vac_booster = "N"
+    else:
         vac_booster = input("Have you got a booster ? (Y/N): ").upper()
+        while vac_booster != "Y" and vac_booster != "N":
+            vac_booster = input("Have you got a booster ? (Y/N): ").upper()
     line = username+','+password+','+age+','+vac+','+vac_booster
     lines = open('register.txt').read().splitlines()
     lines.append(line)

@@ -18,26 +18,37 @@ import Yosita as stat
 
 def main():
     while True:
-        login = input("Do you want to register or login ? (R/L): ").upper()
-        if login == "R":
+        lines = open('register.txt').read().splitlines()
+        if lines == "" or lines == []:
+            print("--- Registering new user ---")
             username = reg.register()
-            print("Your username is: ", username)
+            print(f"Your username is: {username}")
         else:
-            if reg.login() == True:
-                show_menu()
-                while True:
-                    if select_menu() == False:
-                        break
-                break
+            login = input("Do you want to register or login ? (R/L): ").upper()
+            if login == "R":
+                username = reg.register()
+                if username == False:
+                    print("You have failed to register please try again")
+                else:
+                    print(f"Your username is: {username}")
             else:
-                print("Please try again later")
-                return False
+                if reg.login() == True:
+                    while True:
+                        show_menu()
+                        if select_menu() == False:
+                            break
+                    break
+                else:
+                    print("Please try again later")
+                    return False
 
 def show_menu():
+    print("----- Menu -----")
     print("1. Vaccination")
     print("2. Symptoms")
     print("3. Statistics")
     print("4. Exit")
+    print("----------------")
 
 def select_menu():
     try:
