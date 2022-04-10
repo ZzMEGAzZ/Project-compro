@@ -4,13 +4,13 @@ def register():
     print("||||| --- Adding New User --- |||||")
     first = input("First Name: ")
     last = input("Last name: ")
+    age = input("Enter your age: ")
     username = input("Username: ")
     lines = open('register.txt').read().splitlines()
     for line in lines:
         if line.split(',')[0] == username:
             print("Username already exists")
             return False
-    age = input("Enter your age: ")
     password = input('Password: ')
     email = input("Email: ")
     phone = input("Phone: ")
