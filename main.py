@@ -85,7 +85,7 @@ def select_menu(username):
         print("Please enter a valid choice")
 
 def delete_user():
-    print("Please login")
+    print("Please login first.")
     username = reg.login()
     time.sleep(3)
     print("...")
