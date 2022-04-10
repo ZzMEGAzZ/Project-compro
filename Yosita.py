@@ -1,7 +1,6 @@
 '''This function is written by Ms.Yosita ID:6410505817'''
 
 
-from cProfile import label
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -19,7 +18,8 @@ def show_menu():
     print("----- Menu -----")
     print("1. total_vaccination in each health area")
     print("2. percentage of vaccination by type")
-    print("3. Exit")
+    print("3. search data from province")
+    print("4. Exit")
     print("----------------")
 
 def select_menu():
@@ -32,6 +32,9 @@ def select_menu():
             print("percentage of vaccination by type")
             statics_type_of_vaccine()
         elif choice == 3:
+            print("search data from province")
+            vac_per_province()
+        elif choice == 4:
             print("Exit")
             return False
         else:
@@ -120,5 +123,19 @@ def statics_type_of_vaccine():
     plt.pie(total, labels=type, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
     plt.title("Average Vaccination by type in thailand")
     plt.show()
+
+def vac_per_province():
+    data = pd.read_csv('data.csv')
+    x = str(input("Enter province(Thai language): "))
+    j = 0
+    for i in data.province:
+        if i == x:
+            print(f"--- this is {x} Data ---")
+            print(data.loc[j])
+            print("-----------------------------------")
+            return True
+        else:
+            j += 1
+    print("Not found")
 
         
