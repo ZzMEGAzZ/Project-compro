@@ -45,7 +45,7 @@ def show_menu():
     print("1. Vaccination")
     print("2. Symptoms Check")
     print("3. Statistics")
-    print("4. Exit")
+    print("0. Exit")
     print("----------------")
 
 def select_menu(username):
@@ -62,7 +62,7 @@ def select_menu(username):
         elif choice == 3:
             print("Statistics")
             stat.statistics()
-        elif choice == 4:
+        elif choice == 0:
             print("Exit")
             return False
         else:

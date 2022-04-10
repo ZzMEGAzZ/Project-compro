@@ -16,25 +16,66 @@ def statistics():
 def show_menu():
     print("\n")
     print("----- Menu -----")
-    print("1. total_vaccination in each health area")
-    print("2. percentage of vaccination by type")
-    print("3. search data from province")
-    print("4. Exit")
+    print("1. graph total vaccination in each health area")
+    print("2. pie chart percentage of vaccination by type")
+    print("3. graph type of vaccination in each health province")
+    print("4. search data from province")
+    print("0. Exit")
     print("----------------")
 
 def select_menu():
     try:
         choice = int(input("Enter your choice: "))
         if choice == 1:
-            print("total_vaccination in each health area")
+            print("total vaccination in each health area")
             statistics_total_health_area()
         elif choice == 2:
             print("percentage of vaccination by type")
             statics_type_of_vaccine()
         elif choice == 3:
+            print("graph type of vaccination in each health province")
+            health_area_select()
+        elif choice == 4:
             print("search data from province")
             vac_per_province()
+        elif choice == 0:
+            print("Exit")
+            return False
+        else:
+            print("Please enter a valid choice")
+    except ValueError:
+        print("Please enter a valid choice")
+
+def health_area_select():
+    try:
+        choice = int(input("Enter your health area (1-13): "))
+        if choice == 1:
+            health_area_1()
+        elif choice == 2:
+            health_area_2()
+        elif choice == 3:
+            health_area_3()
         elif choice == 4:
+            health_area_4()
+        elif choice == 5:
+            health_area_5()
+        elif choice == 6:
+            health_area_6()
+        elif choice == 7:
+            health_area_7()
+        elif choice == 8:
+            health_area_8()
+        elif choice == 9:
+            health_area_9()
+        elif choice == 10:
+            health_area_10()
+        elif choice == 11:
+            health_area_11()
+        elif choice == 12:
+            health_area_12()
+        elif choice == 13:
+            health_area_13()
+        elif choice == 0:
             print("Exit")
             return False
         else:
@@ -137,5 +178,372 @@ def vac_per_province():
         else:
             j += 1
     print("Not found")
+
+def health_area_1():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 1:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_2():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 2:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_3():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 3:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_4():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 4:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_5():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 5:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_6():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 6:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_7():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 7:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_8():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 8:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_9():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 9:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_10():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 10:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_11():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 11:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_12():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 12:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+def health_area_13():
+    data = pd.read_csv('data.csv')
+    area = data.health_area 
+    sinovac = 0
+    astraZeneca = 0
+    sinopharm = 0
+    pfizer = 0
+
+    for i in range(len(area)):
+        if area[i] == 13:
+            sinovac += eval(str(data.Sinovac[i]))
+            astraZeneca += eval(str(data.AstraZeneca[i]))
+            sinopharm += eval(str(data.Sinopharm[i]))
+            pfizer += eval(str(data.Pfizer[i]))
+
+    type = ["Sinovac", "AstraZeneca", "Sinopharm", "Pfizer"]
+    total = [sinovac, astraZeneca, sinopharm, pfizer]
+
+    fig, (ax1,ax2) = plt.subplots(2, figsize=(12, 6))
+    sns.barplot(x=type, y=total, ax=ax1)
+    ax1.set_title("Type of Vaccination in each health area")
+    ax1.set_ylabel("population * 100 thousand")
+    sns.lineplot(x=type, y=total, ax=ax2)
+    ax2.set_title("Type of Vaccination in each health area")
+    ax2.set_ylabel("population * 100 thousand")
+    plt.tight_layout()
+    plt.show()
+
+statistics()
+
 
         
