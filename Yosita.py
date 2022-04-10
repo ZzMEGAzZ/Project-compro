@@ -1,7 +1,7 @@
 '''This function is written by Ms.Yosita ID:6410505817'''
 
 
-import numpy as np
+import time
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -174,6 +174,7 @@ def vac_per_province():
             print(f"--- this is {x} Data ---")
             print(data.loc[j])
             print("-----------------------------------")
+            time.sleep(5)
             return True
         else:
             j += 1

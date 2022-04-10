@@ -9,7 +9,7 @@ Project Members:
 3.Mr.Suwichan ID:6410505442
 4.Ms.Yosita ID:6410505817
 '''
-
+import time
 import Kristikorn as reg
 import Saharat as vac
 import Suwichan as sym
@@ -18,26 +18,36 @@ import Yosita as stat
 
 def main():
     username = ""
+    print("\n")
+    print("\n")
+    print("-----wellcome to Covid-19 Project-----")
     while True:
         lines = open('register.txt').read().splitlines()
-        if lines == "" or lines == []:
+        if lines == [] or lines == [''] or lines == ['\n']:
             username = reg.register()
             print(f"Your username is: {username}")
         else:
-            login = input("Do you want to register or login ? (R/L): ").upper()
+            print("Do you want to register or login or modified account ? (R/L/M)")
+            login = input("Enter your answer: ").upper()
             if login == "R":
                 username = reg.register()
                 if username == False:
                     print("You have failed to register please try again")
                 else:
                     print(f"Your username is: {username}")
-            else:
+            elif login == "L":
                 username = reg.login() 
                 while True:
                     show_menu()
                     if select_menu(username) == False:
                         break
                 break
+            elif login == "M":
+                print("***Modified account***")
+                delete = input("Modified account must be delete your data and register again do you want to modified account ? (Y/N): ").upper()
+                if delete == "Y":
+                    delete_user()
+                    
 
 def show_menu():
     print("\n")
@@ -69,6 +79,21 @@ def select_menu(username):
             print("Please enter a valid choice")
     except ValueError:
         print("Please enter a valid choice")
+
+def delete_user():
+    print("Please login")
+    username = reg.login()
+    time.sleep(3)
+    print("...")
+    time.sleep(3)
+    reg.modified_data(username)
+    print("Modified account successfully")
+    time.sleep(3)
+    print("...")
+    time.sleep(3)
+    print("Please register again")
+    time.sleep(2)
+    reg.register()
         
 main()
 

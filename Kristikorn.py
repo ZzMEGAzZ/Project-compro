@@ -42,6 +42,7 @@ def login():
     for line in lines:
         if line.split(',')[0] == username and line.split(',')[1] == password:
             print("Welcome",username)
+            print("\n")
             return username
     while line.split(',')[0] != username and line.split(',')[1] != password:
         fails += 1
@@ -51,7 +52,26 @@ def login():
         for line in lines:
             if line.split(',')[0] == username and line.split(',')[1] == password:
                 print("Welcome",line.split(',')[2]+' '+line.split(',')[3])
+                print("\n")
                 return username
               
             if fails == 3:
                 return False
+
+def modified_data(username):
+    lines = open('register.txt').read().splitlines()
+    x = 0
+    for line in lines:
+        if line.split(',')[0] == username:
+            break
+        else:
+            x += 1
+    with open('register.txt','r') as fr:
+        data_lines = fr.readlines()
+        ptr = 0
+        with open("register.txt", "w") as fw:
+            for line in data_lines:
+                if ptr != x:
+                    fw.write(line)
+                ptr += 1
+    return True
