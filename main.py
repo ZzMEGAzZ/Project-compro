@@ -11,10 +11,10 @@ Project Members:
 '''
 
 import time
-import Kristikorn as reg
+import Yosita as reg
 import Saharat as vac
 import Suwichan as sym
-import Yosita as stat
+import Kristikorn as stat
 
 def main():
     username = ""
