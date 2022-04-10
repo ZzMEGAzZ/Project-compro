@@ -41,7 +41,8 @@ def login():
     lines = open('register.txt').read().splitlines()
     for line in lines:
         if line.split(',')[0] == username and line.split(',')[1] == password:
-            print("Welcome",username)
+            print("\n")
+            print("Welcome",line.split(',')[2]+' '+line.split(',')[3])
             print("\n")
             return username
         elif line.split(',')[0] != username or line.split(',')[1] != password:
