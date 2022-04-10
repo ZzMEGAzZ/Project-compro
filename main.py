@@ -21,7 +21,6 @@ def main():
     while True:
         lines = open('register.txt').read().splitlines()
         if lines == "" or lines == []:
-            print("--- Registering new user ---")
             username = reg.register()
             print(f"Your username is: {username}")
         else:
