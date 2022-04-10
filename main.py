@@ -70,8 +70,6 @@ def select_menu(username):
     except ValueError:
         print("Please enter a valid choice")
         
-
-
 main()
 
 

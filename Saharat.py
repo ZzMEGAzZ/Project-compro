@@ -49,9 +49,6 @@ def vaccination(username):
         else:
             print("A second dose is pfiizer or moderna.")
             
-        
-          
-        
 def vaccine_menu1():
     print("----------------")
     print("1.Sinovac")
