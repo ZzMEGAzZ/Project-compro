@@ -543,7 +543,5 @@ def health_area_13():
     plt.tight_layout()
     plt.show()
 
-statistics()
-
 
         
