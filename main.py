@@ -10,6 +10,7 @@ Project Members:
 4.Ms.Yosita ID:6410505817
 '''
 
+from gettext import find
 import Kristikorn as reg
 import Saharat as vac
 import Suwichan as sym
@@ -17,6 +18,7 @@ import Yosita as stat
 
 
 def main():
+    username = ""
     while True:
         lines = open('register.txt').read().splitlines()
         if lines == "" or lines == []:
@@ -32,15 +34,11 @@ def main():
                 else:
                     print(f"Your username is: {username}")
             else:
-                if reg.login() == True:
-                    while True:
-                        show_menu()
-                        if select_menu() == False:
-                            break
-                    break
-                else:
-                    print("Please try again later")
-                    return False
+                username = reg.login() 
+                while True:
+                    show_menu()
+                    if select_menu(username) == False:
+                        break
 
 def show_menu():
     print("\n")
@@ -51,12 +49,12 @@ def show_menu():
     print("4. Exit")
     print("----------------")
 
-def select_menu():
+def select_menu(username):
     try:
         choice = int(input("Enter your choice: "))
         if choice == 1:
             print("Vaccination")
-            vac.vaccination()
+            vac.vaccination(username)
         elif choice == 2:
             print("Symptoms")
             count = sym.symptoms_analysis()
@@ -76,3 +74,5 @@ def select_menu():
 
 
 main()
+
+

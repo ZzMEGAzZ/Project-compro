@@ -1,28 +1,36 @@
 '''This function is written by Mr.Saharat ID:6410505914'''
 
-def vaccination():
+def vaccination(username):
     first = ""
     second = ""
     lines = open('register.txt').read().splitlines()
+    data = open('register.txt').read().splitlines()
+    x = 0
     for line in lines:
-        if line.split(',')[7] == "N" and line.split(',')[8] == "N":
-            if line.split(',')[4] < 18:
-                print("We advice Pfizer for your first dose as it's the only vaccine authorized for younger age groups.")
-            else:
-                print("We advice Moderna for your first dose.")
-        elif line.split(',')[7] == "Y" and line.split(',')[8] == "N":
-            vaccine_menu1()
+        user_login = []
+        if line.split(',')[0] == username:
+            user_login.append(data[x])
+            break
+        else:
+            x += 1
+    if user_login[0].split(',')[7] == "N" and user_login[0].split(',')[8] == "N":
+        if int(user_login[0].split(',')[4]) < 18:
+            print("We advice Pfizer for your first dose as it's the only vaccine authorized for younger age groups.")
+        else:
+            print("We advice Moderna for your first dose.")
+    elif user_login[0].split(',')[7] == "Y" and user_login[0].split(',')[8] == "N":
+        vaccine_menu1()
+        first = input("Which vaccine is your first dose?: ")
+        while first != "1" and first != "2" and first != "3" and first != "4" and first != "5" :
+            print("Please enter a valid choice.")
             first = input("Which vaccine is your first dose?: ")
-            while first != "1" and first != "2" and first != "3" and first != "4" and first != "5" :
-                print("Please enter a valid choice.")
-                first = input("Which vaccine is your first dose?: ")
             vaccine_menu2()
             second = input("Which vaccine is your second dose?: ")
-            while second != "1" and second != "2" and second != "3" and second != "4" and second != "5" and second != "6":
-                print("Please enter a valid choice.")
-                second = input("Which vaccine is your first dose?: ")
-        else:
-            print(f"You are fully vaccinated.")
+        while second != "1" and second != "2" and second != "3" and second != "4" and second != "5" and second != "6":
+            print("Please enter a valid choice.")
+            second = input("Which vaccine is your first dose?: ")
+    else:
+        print(f"You are fully vaccinated.")
 
     
     if first == "1" or first == "3":
@@ -62,5 +70,3 @@ def vaccine_menu2():
     print("6.-")
     print("----------------")
   
-
-    

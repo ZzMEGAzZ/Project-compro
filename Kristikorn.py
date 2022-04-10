@@ -33,7 +33,6 @@ def register():
     return username
 
 def login():
-    global status
     fails = 0
 
     print("||||| --- Login --- |||||")
@@ -43,7 +42,7 @@ def login():
     for line in lines:
         if line.split(',')[0] == username and line.split(',')[1] == password:
             print("Welcome",username)
-            return True
+            return username
     while line.split(',')[0] != username and line.split(',')[1] != password:
         fails += 1
         print(f"Wrong username or password Please try again. You have {3-(fails-1)} tries left.")
@@ -52,11 +51,7 @@ def login():
         for line in lines:
             if line.split(',')[0] == username and line.split(',')[1] == password:
                 print("Welcome",line.split(',')[2]+' '+line.split(',')[3])
-                return True
+                return username
               
             if fails == 3:
                 return False
-    return True
-
-def change_user_data():
-  pass
