@@ -10,7 +10,6 @@ Project Members:
 4.Ms.Yosita ID:6410505817
 '''
 
-from gettext import find
 import Kristikorn as reg
 import Saharat as vac
 import Suwichan as sym
