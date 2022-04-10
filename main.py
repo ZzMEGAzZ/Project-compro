@@ -9,13 +9,12 @@ Project Members:
 3.Mr.Suwichan ID:6410505442
 4.Ms.Yosita ID:6410505817
 '''
-from pickle import FALSE
+
 import time
 import Kristikorn as reg
 import Saharat as vac
 import Suwichan as sym
 import Yosita as stat
-
 
 def main():
     username = ""
