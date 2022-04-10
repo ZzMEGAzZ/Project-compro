@@ -20,20 +20,22 @@ def vaccination(username):
             print("We advice Moderna for your first dose.")
     elif user_login[0].split(',')[7] == "Y" and user_login[0].split(',')[8] == "N":
         vaccine_menu1()
-        first = input("Which vaccine is your first dose?: ")
+        first = input(str("Which vaccine is your first dose?: "))
         while first != "1" and first != "2" and first != "3" and first != "4" and first != "5" :
+            vaccine_menu1()
             print("Please enter a valid choice.")
-            first = input("Which vaccine is your first dose?: ")
-            vaccine_menu2()
-            second = input("Which vaccine is your second dose?: ")
+            first = input(str("Which vaccine is your first dose?: "))
+        vaccine_menu2()
+        second = input("Which vaccine is your second dose?: ")
         while second != "1" and second != "2" and second != "3" and second != "4" and second != "5" and second != "6":
+            vaccine_menu2()
             print("Please enter a valid choice.")
             second = input("Which vaccine is your first dose?: ")
     else:
         print(f"You are fully vaccinated.")
 
     
-    if first == "1" or first == "3":
+    if first == "1" or first == "3" or first == "5":
         if second != "6":
             print("You booster dose is pfiizer or moderna.")
         else:
@@ -50,20 +52,20 @@ def vaccination(username):
             print("A second dose is pfiizer or moderna.")
             
 def vaccine_menu1():
-    print("----------------")
+    print("---- First dose ----")
     print("1.Sinovac")
     print("2.AstraZeneca")
     print("3.Sinopharm")
     print("4.Pfizer")
     print("5.etc.")
-    print("----------------")
+    print("--------------------")
 def vaccine_menu2():
-    print("----------------")
+    print("--- Second dose ---")
     print("1.Sinovac")
     print("2.AstraZeneca")
     print("3.Sinopharm")
     print("4.Pfizer")
     print("5.etc.")
     print("6.-")
-    print("----------------")
+    print("-------------------")
   

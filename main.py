@@ -38,6 +38,7 @@ def main():
                     show_menu()
                     if select_menu(username) == False:
                         break
+                break
 
 def show_menu():
     print("\n")

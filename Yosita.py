@@ -118,7 +118,7 @@ def statics_type_of_vaccine():
 
     colors = sns.color_palette("pastel", n_colors=4)
     plt.pie(total, labels=type, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
-    plt.title("Average Vaccination by type")
+    plt.title("Average Vaccination by type in thailand")
     plt.show()
 
         
