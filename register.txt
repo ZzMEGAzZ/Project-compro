@@ -1,1 +1,3 @@
 admin,admin,admin,...,20,a@a,66,Y,Y
+test,test,test,,20,,,Y,N
+kid,kid,kid,kid,12,kid,000,N,N
