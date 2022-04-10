@@ -1,4 +1,4 @@
-'''This function is written by Ms.Yosita ID:6410505817'''
+'''This function is written by Mr.Kristikorn ID:6410505817'''
 
 
 import time
