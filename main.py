@@ -56,7 +56,8 @@ def select_menu():
         choice = int(input("Enter your choice: "))
         if choice == 1:
             print("Vaccination")
-            vac.vaccination()
+            first, second = vac.vaccination()
+            vac.vac_choice(first, second)
         elif choice == 2:
             print("Symptoms")
             count = sym.symptoms_analysis()
