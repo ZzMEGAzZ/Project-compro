@@ -9,6 +9,7 @@ Project Members:
 3.Mr.Suwichan ID:6410505442
 4.Ms.Yosita ID:6410505817
 '''
+from pickle import FALSE
 import time
 import Kristikorn as reg
 import Saharat as vac
@@ -36,7 +37,10 @@ def main():
                 else:
                     print(f"Your username is: {username}")
             elif login == "L":
-                username = reg.login() 
+                username = reg.login()
+                if username == False :
+                    print("You have failed to login 3 times. Please try again later.")
+                    break
                 while True:
                     show_menu()
                     if select_menu(username) == False:

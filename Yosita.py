@@ -20,7 +20,7 @@ def show_menu():
     print("2. pie chart percentage of vaccination by type")
     print("3. graph type of vaccination in each health province")
     print("4. search data from province")
-    print("0. Exit")
+    print("0. Back")
     print("----------------")
 
 def select_menu():

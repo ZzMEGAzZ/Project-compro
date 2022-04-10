@@ -44,19 +44,18 @@ def login():
             print("Welcome",username)
             print("\n")
             return username
-    while line.split(',')[0] != username and line.split(',')[1] != password:
-        fails += 1
-        print(f"Wrong username or password Please try again. You have {3-(fails-1)} tries left.")
-        username = input("Username: ")
-        password = input("Password: ")
-        for line in lines:
-            if line.split(',')[0] == username and line.split(',')[1] == password:
-                print("Welcome",line.split(',')[2]+' '+line.split(',')[3])
-                print("\n")
-                return username
-              
-            if fails == 3:
-                return False
+        elif line.split(',')[0] != username or line.split(',')[1] != password:
+            while fails <3:
+                fails += 1
+                print(f"Wrong username or password Please try again. You have {3-(fails-1)} tries left.")
+                username = input("Username: ")
+                password = input("Password: ")
+                for line in lines:
+                    if line.split(',')[0] == username and line.split(',')[1] == password:
+                        print("Welcome",line.split(',')[2]+' '+line.split(',')[3])
+                        print("\n")
+                        return username
+            return False
 
 def modified_data(username):
     lines = open('register.txt').read().splitlines()

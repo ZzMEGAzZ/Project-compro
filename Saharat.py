@@ -37,19 +37,19 @@ def vaccination(username):
     
     if first == "1" or first == "3" or first == "5":
         if second != "6":
-            print("You booster dose is pfiizer or moderna.")
+            print("You booster dose is Pfizer or Moderna.")
         else:
-            print("A second dose is Sinovac or Sinnpharm or AstraZeneca")
+            print("A second dose is Sinovac or Sinopharm or AstraZeneca")
     elif first == "2":
         if second != "6":
-            print("You booster dose is pfiizer or moderna.")
+            print("You booster dose is Pfizer or Moderna.")
         else:
             print("A second dose is AstraZeneca")
     elif first == "4":
         if second != "6":
-            print("You booster dose is pfiizer or moderna.")
+            print("You booster dose is Pfizer or Moderna.")
         else:
-            print("A second dose is pfiizer or moderna.")
+            print("A second dose is Pfizer or Moderna.")
             
 def vaccine_menu1():
     print("---- First dose ----")
