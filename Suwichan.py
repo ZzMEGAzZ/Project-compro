@@ -1,4 +1,4 @@
-'''This function is written by Mr.Suwichan ID:6410505442'''
+'''This function is written by Mr.Suwichan ID:6410503181'''
 
 from time import sleep
 
